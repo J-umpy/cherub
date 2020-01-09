@@ -1,5 +1,6 @@
 # Cherub
 Cherub is an open-source Discord bot that pulls data from Discord servers and writes to Google Sheets.
+Please note that this is not currently ready to be downloaded and used. It functions, but you'll need to create a credentials.json and setup.json file, and configure it correctly in order to make it work. A full usable release will be available soon
 
 # Features
 - Collects of Discord messages with metadata
