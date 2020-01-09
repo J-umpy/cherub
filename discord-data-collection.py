@@ -28,13 +28,12 @@ async def on_ready():
 @bot.command()
 async def graph(ctx):
     if ctx.message.author.id == data["ownerid"]:
-        link = data["link"] + str(random.randint(100000000,20000000000)) 
-        embed = discord.Embed(title = "Here ya go!", description = "A graph of activity", colour = discord.Colour.blue())
-        embed.set_footer(text="Try again in a few minutes if it fails, Google can be slow sometimes")
-        embed.set_image(url=link)
-        embed.set_thumbnail(url=link)
-        await ctx.channel.send(embed=embed)
-        print(link)
+      #link = data["link"] + str(random.randint(100000000,20000000000)) 
+      embed = discord.Embed(title = "Here ya go!", description = "A graph of activity", colour = discord.Colour.blue())
+      embed.set_footer(text="Try again in a few minutes if it fails, Google can be slow sometimes")
+      embed.set_image(url=data["link"])
+      embed.set_thumbnail(url=data["link"])
+      await ctx.channel.send(embed=embed)
     else:
         await ctx.channel.send("An error has occured. Either you're missing permissions or the world is ending. Error Code DCH-01")
 
