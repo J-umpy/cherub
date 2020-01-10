@@ -1,7 +1,6 @@
-#Setup
+#Modules
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
-import pandas as pd 
 import discord
 from discord.ext import commands
 from discord.ext.commands import bot
@@ -10,15 +9,18 @@ import datetime
 import random
 import os, sys, traceback, asyncio
 from datetime import datetime
-bot = commands.Bot(command_prefix=".")
+
+#Setup
+with open('setup.json') as f:
+    data = json.loads(f.read())
+bot = commands.Bot(command_prefix=data["prefix"])
+bot.remove_command("help")
 scope = ['https://www.googleapis.com/auth/drive']
 creds = ServiceAccountCredentials.from_json_keyfile_name('credentials.json', scope)
 gc = gspread.authorize(creds)
 sh = gc.open("Calamari Cove Data Collection")
 wks1 = sh.worksheet("Sheet1")
 wks2 = sh.worksheet("Sheet2")
-with open('setup.json') as f:
-    data = json.loads(f.read())
 
 
 @bot.event
@@ -26,22 +28,23 @@ async def on_ready():
     print("Bot connected")
 
 @bot.command()
+async def help(ctx):
+    embed = discord.Embed(title = "Welcome to the Help Center!", description = "Help", colour = discord.Colour.blue())
+    embed.set_footer(text="Bot by Jumpy♡#0150")
+    embed.add_field(name="Commands", value=".graph: Displays a graph of server activity, if configured properly", inline=False)
+    embed.add_field(name="Configuration", value="For configuration support contact me or check the github page")
+    embed.add_field(name="Contact Me", value="Discord: Jumpy♡#0150\nTwitter: j_umpy")
+    await ctx.channel.send(embed=embed)
+
+
+@bot.command()
 async def graph(ctx):
-    if ctx.message.author.id == data["ownerid"]:
-        #link = data["link"] + str(random.randint(100000000,20000000000))
-        link = data["link"]
-        embed = discord.Embed(title = "Here ya go!", description = "A graph of activity", colour = discord.Colour.blue())
-        embed.set_footer(text="Try again in a few minutes if it fails, Google can be slow sometimes")
-        embed.set_image(url=link)
-        embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/533774631102971904/664988197830262814/insiderbot.png")
-        await ctx.channel.send(embed=embed)
-        print(link)
-    else:
-        await ctx.channel.send("An error has occured. Either you're missing permissions or the world is ending. Error Code DCH-01")
-
-
-
-
+    link = data["link"]
+    embed = discord.Embed(title = "Here ya go!", description = "A graph of activity", colour = discord.Colour.blue())
+    embed.set_footer(text="Try again in a few minutes if it fails, Google can be slow sometimes.")
+    embed.set_image(url=link)
+    embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/533774631102971904/664988197830262814/insiderbot.png")
+    await ctx.channel.send(embed=embed)
 
 @bot.event
 async def on_message(message):
@@ -66,12 +69,10 @@ async def on_message(message):
         row = [date1, 0]
         wks2.insert_row(row, 2)
     await bot.process_commands(message)
-    
 
 
 
-    
-    
+
 
 
 
