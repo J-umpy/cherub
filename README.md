@@ -10,10 +10,15 @@ Please note that this is not currently ready to be downloaded and used. It funct
 
 # Feature Plans
 ✔ Have the graphs actually embed within Discord (Google Sheets is a pain to work with)
+
 - Improve data sorting to allow for more efficient data interpretation for other projects. 
+      
       EX) If you were to use this data for a machine learning chatbot, differentiating between messages from #general and #bot-commands               would consume a considerable amount of time
+
 ✔ Setup wizard and documentation for installation and setup
+
 X ~~Error code compilation, solutions, and other documentation~~
+
 This is no longer necessary as the code has been sufficiently error tested and there is a setup wizard. I can add in error codes and               other documentation if enough people request it though
 
 # Next Feature to be added:
