@@ -27,7 +27,7 @@ Rewrite of the program to remove Google Sheets API, as it's request limit disabl
       * If you don't have a Google Sheets Graph URL yet, or you do not wish to have one, press enter when it asks for the URL, the program         will work. To make a Graph URL, create a graph with the data you'd like to be included in the graph, hover your mouse over the             graph, click the three dots, press share, ***deselect the rest of your spreadsheet***, and share the graph as an image. Make sure           it's not an interactive image, or it will not embed on Discord.
       * Alternatively, for experienced users you can configure setup.json manually, just define the variables "discordtoken" for the bot           token, "link" for the Graph URL, and "sheetname" for the sheet name.You can also run either setup or discord-data-collection from           their .py versions
 
-#Social Media
+# Social Media
 - Patreon: https://patreon.com/jumpyvonvagabond
 - Discord: https://discord.gg/calamari, username: @Jumpy♡#0150
 - Twitter: @j_umpy
