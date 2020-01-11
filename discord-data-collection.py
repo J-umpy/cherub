@@ -15,10 +15,6 @@ bot = commands.Bot(command_prefix=data["prefix"])
 bot.remove_command("help")
 scope = ['https://www.googleapis.com/auth/drive']
 creds = ServiceAccountCredentials.from_json_keyfile_name('credentials.json', scope)
-gc = gspread.authorize(creds)
-sh = gc.open(data["sheetname"])
-wks1 = sh.worksheet("Sheet1")
-wks2 = sh.worksheet("Sheet2")
 
 
 @bot.event
@@ -60,18 +56,21 @@ async def on_message(message):
         gc = gspread.authorize(creds)
         sh = gc.open(data["sheetname"])
         wks1 = sh.worksheet("Sheet1")
-    date1 = str(datetime.date(datetime.now()))
-    date2 = wks2.cell(2, 1).value
-    date2 = date2.replace("'", '')
-    if date1 == date2:
-        daytotal = (wks2.cell(2, 2).value)
-        daytotal = int(daytotal)
-        daytotal = daytotal+1
-        wks2.update_cell(2, 2, daytotal)
-    else:
-        row = [date1, 0]
-        wks2.insert_row(row, 2)
-    await bot.process_commands(message)
+        wks2 = sh.worksheet("Sheet2")
+    finally:
+        wks1.insert_row(row, 2)
+        date1 = str(datetime.date(datetime.now()))
+        date2 = wks2.cell(2, 1).value
+        date2 = date2.replace("'", '')
+        if date1 == date2:
+            daytotal = (wks2.cell(2, 2).value)
+            daytotal = int(daytotal)
+            daytotal = daytotal+1
+            wks2.update_cell(2, 2, daytotal)
+        else:
+            row = [date1, 0]
+            wks2.insert_row(row, 2)
+        await bot.process_commands(message)
 
 
 
