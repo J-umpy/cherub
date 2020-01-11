@@ -6,8 +6,6 @@ from discord.ext import commands
 from discord.ext.commands import bot
 import json
 import datetime
-import random
-import os, sys, traceback, asyncio
 from datetime import datetime
 
 #Setup
@@ -18,7 +16,7 @@ bot.remove_command("help")
 scope = ['https://www.googleapis.com/auth/drive']
 creds = ServiceAccountCredentials.from_json_keyfile_name('credentials.json', scope)
 gc = gspread.authorize(creds)
-sh = gc.open("Calamari Cove Data Collection")
+sh = gc.open(data["sheetname"])
 wks1 = sh.worksheet("Sheet1")
 wks2 = sh.worksheet("Sheet2")
 
@@ -56,7 +54,12 @@ async def on_message(message):
     link = str(message.jump_url)
     channel = str(message.channel)
     row = [userid,author,content,time,messageid,link,channel]
-    wks1.insert_row(row, 2)
+    try:
+        wks1.insert_row(row, 2)
+    except:
+        gc = gspread.authorize(creds)
+        sh = gc.open(data["sheetname"])
+        wks1 = sh.worksheet("Sheet1")
     date1 = str(datetime.date(datetime.now()))
     date2 = wks2.cell(2, 1).value
     date2 = date2.replace("'", '')
