@@ -24,3 +24,6 @@ Rewrite of the program to remove Google Sheets API, as it's request limit disabl
 2. Create a Google API User and generate your keys as a JSON file. Rename the .json file "credentials.json"
 3. Make a Discord Bot User and save the token somewhere
 4. Run setup.exe, then discord-data-collection.exe
+      * If you don't have a Google Sheets Graph URL yet, or you do not wish to have one, press enter when it asks for the URL, the program         will work. To make a Graph URL, create a graph with the data you'd like to be included in the graph, hover your mouse over the             graph, click the three dots, press share, ***deselect the rest of your spreadsheet***, and share the graph as an image. Make sure           it's not an interactive image, or it will not embed on Discord.
+      * Alternatively, for experienced users you can configure setup.json manually, just define the variables "discordtoken" for the bot           token, "link" for the Graph URL, and "sheetname" for the sheet name.You can also run either setup or discord-data-collection from           their .py versions
+
