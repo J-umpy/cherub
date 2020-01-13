@@ -1,4 +1,6 @@
 # Cherub
+NOTE: While sorting out ToS issues with Discord, cherub is not currently in active development
+
 NOTE: Google API Keys are needed. Please choose the "download as JSON" option when creating your keys, and then rename the file "credentials.json" and put it in the same folder as the rest of this repository.
 
 Cherub is an open-source Discord bot that pulls data from Discord servers and writes to Google Sheets.
