@@ -29,5 +29,5 @@ https://github.com/Jumpyvonvagabond/cherub-public/wiki/Creating-a-Google-API-Tok
 
 # Social Media
 - Patreon: https://patreon.com/jumpyvonvagabond
-- Discord: https://discord.gg/calamari, username: @Jumpy♡#0150
+- Discord: https://discord.gg/mB7H34Z, username: @Jumpy♡#0150
 - Twitter: @j_umpy
