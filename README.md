@@ -18,6 +18,7 @@ In other words, Cherub is a Discord bot that logs all messages from your server.
 - Improve data sorting to allow for more efficient data interpretation for other projects. 
       
      EX) If you were to use this data for a machine learning chatbot, differentiating between messages from #general and #bot-commands would consume a considerable amount of time
+- Make a new license
 
 
 # Next Update:
