@@ -11,14 +11,14 @@ In other words, Cherub is a Discord bot that logs all messages from your server.
 - Collects Discord messages with metadata
 - Collects message counts and determines usage data
 
-# Feature Plans
-✔ Have the graphs actually embed within Discord (Google Sheets is a pain to work with)
+# Plans
+- Discontinue Google Sheets support
+- Make Cherub ToS-legal, as member data has to be able to be deleted at will for her to be ToS-legal
 
 - Improve data sorting to allow for more efficient data interpretation for other projects. 
       
-      EX) If you were to use this data for a machine learning chatbot, differentiating between messages from #general and #bot-commands would consume a considerable amount of time
+     EX) If you were to use this data for a machine learning chatbot, differentiating between messages from #general and #bot-commands would consume a considerable amount of time
 
-✔ Setup wizard and documentation for installation and setup
 
 # Next Update:
 More bug fixes
