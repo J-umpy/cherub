@@ -1,6 +1,9 @@
 # Cherub
-NOTE: While sorting out ToS issues with Discord, cherub is not currently in active development
+NOTE: This branch is in violation of Discord's ToS, and as such is no longer supported, so please use [the SQLite branch](https://github.com/Jumpyvonvagabond/cherub/edit/master/README.md)
 
+This branch is here for educational purposes only, and no support will be provided for it
+
+# Old ReadME
 NOTE: Google API Keys are needed. Please choose the "download as JSON" option when creating your keys, and then rename the file "credentials.json" and put it in the same folder as the rest of this repository.
 
 Cherub is an open-source Discord bot that pulls data from Discord servers and writes to Google Sheets.
@@ -10,19 +13,6 @@ In other words, Cherub is a Discord bot that logs all messages from your server.
 # Features
 - Collects Discord messages with metadata
 - Collects message counts and determines usage data
-
-# Plans
-- Discontinue Google Sheets support
-- Make Cherub ToS-legal, as member data has to be able to be deleted at will for her to be ToS-legal
-
-- Improve data sorting to allow for more efficient data interpretation for other projects. 
-      
-     EX) If you were to use this data for a machine learning chatbot, differentiating between messages from #general and #bot-commands would consume a considerable amount of time
-- Make a new license
-
-
-# Next Update:
-More bug fixes
 
 # Setup Instructions:
 These are now on the wiki! 
