@@ -3,9 +3,6 @@ import discord
 from discord.ext import commands
 from discord.ext.commands import bot
 import json
-import datetime
-from datetime import datetime
-import random
 import sqlite3
 from sqlite3 import Error
 import sdb
