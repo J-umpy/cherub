@@ -14,5 +14,5 @@ These are now on the [wiki](https://github.com/Jumpyvonvagabond/cherub/wiki)!
 
 # Social Media
 - [Patreon](https://patreon.com/jumpyvonvagabond)
-- [Discord](https://discord.gg/calamari), username: @Jumpy♡#0150
+- [Discord](https://discord.gg/mB7H34Z), username: @Jumpy♡#0150
 - [Twitter](https://twitter.com/J_umpy)
